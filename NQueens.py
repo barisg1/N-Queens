@@ -108,12 +108,12 @@ class NQueens(SearchProblem):
         return self.count_attacking_pairs(state)
 
 # This is a test code. You can try with different N values and states.
-#myViewer = WebViewer()
-problem = NQueens(8) #create NQueens instance
+myViewer = WebViewer()
+problem = NQueens(4) #create NQueens instance
 print(problem) #print the description of the problem
 print("attacking " + str(problem.count_attacking_pairs(problem.state))) #print the total number of attacking pairs in the board
-result = astar(problem,graph_search=True)
+result = astar(problem, viewer=myViewer,graph_search=True)
 print(result.path())
 print(result.state)
 print(result.cost)
-#print(myViewer.stats)
+print(myViewer.stats)
